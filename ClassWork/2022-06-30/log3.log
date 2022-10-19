@@ -1,0 +1,88 @@
+CRITICAL:root:Loops.__init__() missing 1 required positional argument: 'List'
+CRITICAL:root:Loops.__init__() missing 1 required positional argument: 'List'
+INFO:root:Object created
+CRITICAL:root:Loops.getdiamond() takes 0 positional arguments but 1 was given
+INFO:root:Object created
+INFO:root:Printing 'Ineuron' as diamond
+INFO:root:Object created
+INFO:root:Printing 'Ineuron' as diamond
+INFO:root:Object created
+INFO:root:Printing 'Ineuron' as steps
+INFO:root:Object created
+INFO:root:Printing 'Ineuron' as steps
+INFO:root:Printing 'Ineuron' as diamond
+INFO:root:Object created
+INFO:root:Printing 'Ineuron' as steps
+INFO:root:Printing 'Ineuron' as diamond
+INFO:root:Object created
+INFO:root:Printing 'Ineuron' as steps
+INFO:root:Printing 'Ineuron' as diamond
+INFO:root:Object created
+INFO:root:Printing 'Ineuron' as steps
+INFO:root:Printing 'Ineuron' as diamond
+CRITICAL:root:name 's' is not defined
+INFO:root:Object created
+INFO:root:Printing 'Ineuron' as steps
+INFO:root:Printing 'Ineuron' as diamond
+INFO:root:Printing lists in master list
+INFO:root:Object created
+INFO:root:Printing 'Ineuron' as steps
+INFO:root:Printing 'Ineuron' as diamond
+INFO:root:Printing lists in master list
+INFO:root:Object created
+INFO:root:Printing 'Ineuron' as steps
+INFO:root:Printing 'Ineuron' as diamond
+INFO:root:Printing lists in master list
+INFO:root:Object created
+INFO:root:Printing 'Ineuron' as steps
+INFO:root:Printing 'Ineuron' as diamond
+INFO:root:Printing lists in master list
+INFO:root:Printing dicts in master list
+INFO:root:trying to get number of keys in dict element from list
+INFO:root:trying to get all string data from list
+INFO:root:trying to get alphanum data from list
+INFO:root:trying to get product of all numeric data from list
+INFO:root:trying to unwrap all collections in list
+INFO:root:Object created
+INFO:root:Printing 'Ineuron' as steps
+INFO:root:Printing 'Ineuron' as diamond
+INFO:root:Printing lists in master list
+INFO:root:Printing dicts in master list
+INFO:root:trying to get tuples from list
+INFO:root:trying to get numerical data from list
+INFO:root:trying to get sum of numerical data from list
+INFO:root:trying to get sum of numerical data from list
+INFO:root:trying to get 'Ineuron' from list
+INFO:root:trying to get number of occurrences data from list
+INFO:root:Object created
+INFO:root:Printing 'Ineuron' as steps
+INFO:root:Printing 'Ineuron' as diamond
+INFO:root:Printing lists in master list
+INFO:root:Printing dicts in master list
+INFO:root:trying to get tuples from list
+INFO:root:trying to get numerical data from list
+INFO:root:trying to get sum of numerical data from list
+INFO:root:trying to get sum of numerical data from list
+INFO:root:trying to get 'Ineuron' from list
+INFO:root:trying to get number of occurrences data from list
+INFO:root:trying to get number of keys in dict element from list
+INFO:root:trying to get all string data from list
+INFO:root:trying to get alphanum data from list
+INFO:root:trying to get product of all numeric data from list
+INFO:root:trying to unwrap all collections in list
+INFO:root:Object created
+INFO:root:Printing 'Ineuron' as steps
+INFO:root:Printing 'Ineuron' as diamond
+INFO:root:Printing lists in master list
+INFO:root:Printing dicts in master list
+INFO:root:trying to get tuples from list
+INFO:root:trying to get numerical data from list
+INFO:root:trying to get sum of numerical data from list
+INFO:root:trying to get odd numerical data from list
+INFO:root:trying to get 'Ineuron' from list
+INFO:root:trying to get number of occurrences data from list
+INFO:root:trying to get number of keys in dict element from list
+INFO:root:trying to get all string data from list
+INFO:root:trying to get alphanum data from list
+INFO:root:trying to get product of all numeric data from list
+INFO:root:trying to unwrap all collections in list

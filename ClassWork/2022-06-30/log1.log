@@ -1,0 +1,14 @@
+INFO Object declared
+CRITICAL String.getdata() missing 3 required positional arguments: 'start', 'end', and 'jump'
+INFO Object declared
+INFO Getting data from index 2 to index 50 with a jump of 3
+INFO Object declared
+INFO Getting data in split uppercase format
+CRITICAL str.upper() takes no arguments (1 given)
+INFO Object declared
+INFO Getting data in split uppercase format
+CRITICAL name 'a' is not defined
+INFO Object declared
+INFO replace with * example
+INFO Object declared
+INFO replace with * example

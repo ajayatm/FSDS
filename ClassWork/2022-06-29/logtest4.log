@@ -1,0 +1,4 @@
+2022-09-27 19:33:52,492 [Errno 2] No such file or directory: 'ajay.txt'
+2022-09-27 19:34:32,704 File opened
+2022-09-27 19:35:10,222 INFO File opened
+2022-09-27 19:35:26,685 CRITICAL [Errno 2] No such file or directory: 'ajay1.txt'

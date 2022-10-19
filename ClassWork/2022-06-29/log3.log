@@ -1,0 +1,17 @@
+CRITICAL 2022-09-27 00:00:12,022 name 'logging' is not defined
+INFO 2022-09-27 00:05:45,669 The numbers entered are 6.000000 and 3.000000
+INFO 2022-09-27 00:06:12,542 The numbers entered are 6 and 3
+INFO 2022-09-27 00:06:49,737 The numbers entered are 6 and 0
+CRITICAL 2022-09-27 00:06:49,738 division by zero
+INFO 2022-09-27 19:27:24,549 The numbers entered are 6 and 0
+CRITICAL 2022-09-27 19:27:24,549 division by zero
+INFO 2022-09-27 19:27:55,344 The numbers entered are 6 and 0
+ERROR 2022-09-27 19:27:55,345 division by zero
+Traceback (most recent call last):
+  File "d:\Ajay\Education\iNeuron\FSDS\Ajay's weekly class notes\2022-06-29\logtest3.py", line 9, in <module>
+    print(div(6,0))
+  File "d:\Ajay\Education\iNeuron\FSDS\Ajay's weekly class notes\2022-06-29\logtest3.py", line 6, in div
+    return (a/b)
+ZeroDivisionError: division by zero
+INFO 2022-09-27 19:28:58,680 The numbers entered are 6 and 0
+INFO 2022-09-27 19:28:58,681 division by zero
