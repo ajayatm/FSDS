@@ -33,8 +33,6 @@ js = pd.read_json('https://api.github.com/repos/pandas-dev/pandas/issues')
 # %%
 js['user']
 # %%
-pwd
-# %%
 import os
 os.cwd()
 # %%

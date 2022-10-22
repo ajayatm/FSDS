@@ -1,5 +1,6 @@
 import logging
 import os
+import mysqlfile
 logging.basicConfig(filename='pandaslog.log',level=logging.INFO)
 class Pandas:
     def __init__(self, input1, input2):
@@ -16,68 +17,57 @@ class Pandas:
         except:
             logging.critical('Critical Exception initializing, stopping the process')
     
-    def creatingtables(self):
-        try:
-            createtables(self.input1, self.input2)
-        except:
-            logging.critical('Critical Exception creating tables')
-
     def loadtables(self):
         try:
-            loadingtables(self.input1, self.input2)
+            mysqlfile.loadingtables(self.input1, self.input2)
         except:
             logging.critical('Critical Exception loading tables')
 
-    def gettingdf(self):
-        try:
-            readtodf(self.input1, self.input2)
-        except:
-            logging.critical('Critical Exception loading dataframe')
-
-    def dftojson(self, df):
-        try:
-            loaddftojson(df)
-        except:
-            logging.critical('Critical Exception creating json')
-
-    def jsontomongo(self, js):
-        try:
-            loadjsontomongo(js)
-        except:
-            logging.critical('Critical Exception loading mongo')
-    
     def leftjointables(self):
         try:
-            joiningtablesleft()
+            mysqlfile.leftjoin()
         except:
             logging.critical('Critical Exception joining tables')
     
-    def leftjointables(self):
+    def getdresscount(self):
         try:
-            joiningtablesleft()
+            mysqlfile.noofdress()
         except:
-            logging.critical('Critical Exception joining tables')
-    
-    def getunique(self):
-        try:
-            getuniquedresscount()
-        except:
-            logging.critical('Critical Exception getting dress counts')
+            logging.critical('Critical Exception getting dress count')
     
     def zerorecommend(self):
         try:
-            getzerorecommend()
+            mysqlfile.zerorecommendation()
         except:
             logging.critical('Critical Exception getting zero recommendation count')
     
     def salescount(self):
         try:
-            getsalescount()
+            mysqlfile.totalsales()
         except:
             logging.critical('Critical Exception getting sales count')
 
-    def thirdhighest(self):
+    def getthirdhighest(self):
         try:
-            getthirdhighest()
+            mysqlfile.thirdhighest()
         except:
             logging.critical('Critical Exception getting third highest selling dress')
+
+    def pandasmongo(self):
+        try:
+            mysqlfile.pandasdf()
+        except:
+            logging.critical('Critical Exception getting dataframe')
+
+f1 = 'D:\\Ajay\\Education\\iNeuron\\FSDS\\ClassWork\\2022-07-24\\class assignment\\Attribute DataSet.xlsx'
+f2 = 'D:\\Ajay\\Education\\iNeuron\\FSDS\\ClassWork\\2022-07-24\\class assignment\\Dress Sales.xlsx'
+
+
+PandasObject = Pandas(f1,f2)
+PandasObject.loadtables()
+PandasObject.leftjointables()
+PandasObject.getdresscount()
+PandasObject.zerorecommend()
+PandasObject.salescount()
+PandasObject.getthirdhighest()
+PandasObject.pandasmongo()
