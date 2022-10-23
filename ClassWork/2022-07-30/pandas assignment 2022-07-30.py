@@ -25,7 +25,7 @@ df2[df2['Average Rating'] == True]
 df1[df1['Average Rating'] < 3.5]['Agent Name'].unique()
 # %%
 #7 . agent name who have rating more then 4.5
-df1[df1['Average Rating'] < 4.5]['Agent Name'].unique()
+df1[df1['Average Rating'] > 4.5]['Agent Name'].unique()
 # %%
 #8 . how many feedaback agents have received more then 4.5 average
 df3 = df1.groupby('Agent Name')['Average Rating'].mean().to_frame()
@@ -38,8 +38,6 @@ df1.groupby('Agent Name')['Mean Resp Time'].mean()
 #10 . average weekely resolution time for each agents
 df1['Mean Resol Time'] = pd.to_datetime(df1['Average Resolution Time'])
 df1.groupby('Agent Name')['Mean Resol Time'].mean()
-# %%
-df1
 # %%
 #11 . list of all agents name 
 list(df['Agent Name'].unique())
