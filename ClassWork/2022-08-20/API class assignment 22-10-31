@@ -1,0 +1,142 @@
+from flask import Flask, request, jsonify
+import mysql.connector as connection
+import pandas as pd
+import pymongo
+client = pymongo.MongoClient("mongodb+srv://ajayatm3456:Porsche911@cluster0.pu72r.mongodb.net/?retryWrites=true&w=majority")
+mydb = connection.connect(host='localhost', user='root',passwd='Porsche*911',raise_on_warnings=True)
+cursor = mydb.cursor(buffered=True)
+cursor.execute('USE FSDS')
+#cursor.execute("CREATE TABLE IF NOT EXISTS student (`first name` varchar(30), `last name` varchar(30), phone int, country varchar(20))")
+database = client['mongotest']
+collection = database["student"]
+
+app = Flask(__name__)
+
+"""
+1 . Write a program to insert a record in sql table via api 
+2.  Write a program to update a record via api 
+3 . Write a program to delete a record via api 
+4 . Write a program to fetch a record via api
+5 . All the above questions you have to answer for mongo db as well.
+"""
+@app.route('/insertsql',methods=['GET','POST'])
+def insertsql():
+    try:
+        if request.method == 'POST':
+            a = request.json['first name']
+            b = request.json['last name']
+            c = request.json['phone']
+            d = request.json['country']
+            cursor.execute("insert into student values (%s,%s,%s,%s)",[a,b,c,d])
+            mydb.commit()
+            return jsonify("Successfully inserted")
+    except Exception as e:
+        return jsonify(str(e))
+
+@app.route('/updatesql',methods=['GET','POST'])
+def updatesql():
+    try:
+        if request.method == 'POST':
+            a = request.json['where first name']
+            b = request.json['where last name']
+            c = request.json['where phone']
+            d = request.json['where country']
+            e = request.json['new first name']
+            f = request.json['new last name']
+            g = request.json['new phone']
+            h = request.json['new country']
+            cursor.execute("update student set `first name` = %s, `last name` = %s, phone = %s, country = %s where `first name` = %s and `last name` = %s and phone = %s and country = %s",[e,f,g,h,a,b,c,d])
+            mydb.commit()
+            return jsonify("Successfully updated")
+    except Exception as e:
+        return jsonify(str(e))
+
+@app.route('/deletesql',methods=['GET','POST'])
+def deletesql():
+    try:
+        if request.method == 'POST':
+            a = request.json['where first name']
+            b = request.json['where last name']
+            c = request.json['where phone']
+            d = request.json['where country']
+            cursor.execute("select count(*) from student where `first name` = %s and `last name` = %s and phone = %s and country = %s",[a,b,c,d])
+            f = cursor.fetchall()
+            if f[0][0] > 0:
+                cursor.execute("delete from student where `first name` = %s and `last name` = %s and phone = %s and country = %s",[a,b,c,d])
+                mydb.commit()
+                return jsonify("Successfully deleted")
+            else:
+                return jsonify("Row not found, nothing to delete")
+    except Exception as e:
+        return jsonify(str(e))
+
+@app.route('/fetchsql',methods=['GET','POST'])
+def fetchsql():
+    try:
+        if request.method == 'POST':
+            a = request.json['where first name']
+            b = request.json['where last name']
+            c = request.json['where phone']
+            d = request.json['where country']
+            cursor.execute("select * from student where `first name` = %s and `last name` = %s and phone = %s and country = %s",[a,b,c,d])
+            f = cursor.fetchall()
+            return jsonify(f)
+    except Exception as e:
+        return jsonify(str(e))
+
+@app.route('/insertmongo',methods=['GET','POST'])
+def insertmongo():
+    try:
+        if request.method == 'POST':
+            collection.insert_many([request.json])
+            return jsonify("Successfully inserted")
+    except Exception as e:
+        return jsonify(str(e))
+
+@app.route('/updatemongo',methods=['GET','POST'])
+def updatemongo():
+    try:
+        if request.method == 'POST':
+            a = request.json['where first name']
+            b = request.json['where last name']
+            c = request.json['where phone']
+            d = request.json['where country']
+            e = request.json['new first name']
+            f = request.json['new last name']
+            g = request.json['new phone']
+            h = request.json['new country']
+            collection.update_many(
+	            {"first name":a,"last name":b,"phone":c,"country":d},
+	            { '$set': {"first name":e,"last name":f,"phone":g,"country":h}}
+                )
+            return jsonify("Successfully updated")
+    except Exception as e:
+        return jsonify(str(e))
+
+@app.route('/deletemongo',methods=['GET','POST'])
+def deletemongo():
+    try:
+        if request.method == 'POST':
+            collection.find_one_and_delete(request.json)
+            return jsonify("Successfully deleted")
+    except Exception as e:
+        return jsonify(str(e))
+
+@app.route('/fetchmongo',methods=['GET','POST'])
+def fetchmongo():
+    try:
+        if request.method == 'POST':
+            a = request.json['where first name']
+            b = request.json['where last name']
+            c = request.json['where phone']
+            d = request.json['where country']
+            f = collection.find({"first name":a,"last name":b,"phone":c,"country":d}, {'_id':0})
+            for i in f:
+                return jsonify(i)
+    except Exception as e:
+        return jsonify(str(e))
+
+
+        
+if __name__ == '__main__':
+    app.run()
