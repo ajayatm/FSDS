@@ -131,8 +131,10 @@ def fetchmongo():
             c = request.json['where phone']
             d = request.json['where country']
             f = collection.find({"first name":a,"last name":b,"phone":c,"country":d}, {'_id':0})
+            g = []
             for i in f:
-                return jsonify(i)
+                g.append(i)
+            return jsonify(g)
     except Exception as e:
         return jsonify(str(e))
 
